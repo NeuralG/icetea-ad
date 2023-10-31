@@ -13,11 +13,10 @@ const jsonInDB = ref(database, "IceTeaDeneme")
 
 const buttonEl = document.getElementById("button")
 
-const sekilEl = document.getElementById("kill_by")
-const silahEl = document.getElementById("silah")
-const burakEl = document.getElementById("burak")
-const ankaraEl = document.getElementById("ankara")
-const nameEl = document.getElementById("isim")
+const cesitEl = document.getElementById("cesit")
+const litreEl = document.getElementById("litre")
+const favoriEl = document.getElementById("favori")
+const isimEl = document.getElementById("isim")
 const mailEl = document.getElementById("mail")
 
 
@@ -25,23 +24,21 @@ const mailEl = document.getElementById("mail")
 
 buttonEl.addEventListener("click", function(){
 
-    let name = nameEl.value
+    let isim = isimEl.value
     let mail = mailEl.value
-    let silah = silahEl.value
-    let sekil = sekilEl.value
-    let burak = burakEl.value
-    let ankara = ankaraEl.value
+    let cesit = cesitEl.value
+    let litre = litreEl.value
+    let favori = favoriEl.value
 
     const values = new Map()
 
-    values.set('name',name)
+    values.set('isim',isim)
     values.set('mail',mail)
-    values.set('burak',burak)
-    values.set('ankara',ankara)
-    values.set('silah',silah)
-    values.set('sekil',sekil)
+    values.set('cesit',cesit)
+    values.set('litre',litre)
+    values.set('favori',favori)
 
-    if(name && mail && silah && sekil && burak && ankara){
+    if(isim && mail && cesit && litre && favori){
         var obj = Object.fromEntries(values);
         var myJSON = JSON.stringify(obj);
         push(jsonInDB,myJSON)
